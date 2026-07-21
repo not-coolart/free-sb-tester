@@ -8,12 +8,14 @@
 body {
     background: linear-gradient(135deg, #0b0c10 0%, #12141a 50%, #090a0e 100%);
     color: #e2e8f0;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh; /* Исправляет скачки высоты на мобильных браузерах */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
+    padding: 20px 20px 70px 20px; /* Добавили нижний отступ, чтобы контент не прилимал к плашке на телефоне */
 }
 
 .container {
@@ -21,6 +23,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    max-width: 100%;
     animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -54,7 +57,11 @@ body {
 .text-wrapper {
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
+    flex-wrap: wrap; /* Разрешаем тексту переноситься на новую строку на узких экранах, чтобы ничего не обрезалось */
+    gap: 6px;
+    text-align: center;
+    padding: 0 10px;
 }
 
 /* Увеличенный текст под кнопкой */
@@ -81,17 +88,33 @@ body {
 /* Плашка авторства */
 .footer-credit {
     position: absolute;
-    bottom: 24px;
-    right: 28px;
-    font-size: 14px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 13px;
     font-weight: 600;
     color: #8293b0;
     letter-spacing: 0.6px;
     background: rgba(255, 255, 255, 0.04);
-    padding: 10px 18px;
+    padding: 8px 14px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* На совсем узких телефонах плашка аккуратно смещается по центру, чтобы не вылезать за экран */
+@media (max-width: 400px) {
+    .footer-credit {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 30px;
+    }
+    
+    body {
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
 }
 
 @keyframes fadeIn {
