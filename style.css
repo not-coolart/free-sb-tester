@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0b0c10 0%, #12141a 50%, #090a0e 100%);
+    color: #e2e8f0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tester-button {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Делаем значок полностью чистым и круглым без квадратных углов */
+.tester-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.tester-button:hover {
+    transform: scale(1.08) translateY(-4px);
+}
+
+.tester-button:active {
+    transform: scale(1.02);
+}
+
+.text-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Увеличенный текст под кнопкой */
+.tester-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #9aa4b2;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease;
+}
+
+.slap-inline-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.tester-button:hover ~ .text-wrapper .tester-text {
+    color: #cbd5e1;
+}
+
+/* Плашка авторства */
+.footer-credit {
+    position: absolute;
+    bottom: 24px;
+    right: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #8293b0;
+    letter-spacing: 0.6px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
