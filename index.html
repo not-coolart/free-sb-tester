@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Slap Battles Tester</title>
     <link rel="icon" type="image/png" href="tester.png">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Динамическое подключение стилей, которое обходит кэш -->
+    <link rel="stylesheet" id="dynamic-style" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -25,5 +27,16 @@
         Created by @not.coolart
     </div>
 
+    <!-- Скрипт автоматического сброса кэша при обновлении файлов -->
+    <script>
+        // Меняй эту версию при каждом изменении стилей или логики на сайте
+        const APP_VERSION = '1.0.1';
+        
+        if (localStorage.getItem('site_version') !== APP_VERSION) {
+            localStorage.setItem('site_version', APP_VERSION);
+            // Принудительно перезагружает страницу с очисткой кэша браузера
+            window.location.reload(true);
+        }
+    </script>
 </body>
 </html>
