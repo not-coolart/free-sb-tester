@@ -9,13 +9,13 @@ body {
     background: linear-gradient(135deg, #0b0c10 0%, #12141a 50%, #090a0e 100%);
     color: #e2e8f0;
     min-height: 100vh;
-    min-height: 100dvh; /* Исправляет скачки высоты на мобильных браузерах */
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
     position: relative;
-    padding: 20px 20px 70px 20px; /* Добавили нижний отступ, чтобы контент не прилимал к плашке на телефоне */
+    padding: 20px 20px 70px 20px;
 }
 
 .container {
@@ -36,7 +36,6 @@ body {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Делаем значок полностью чистым и круглым без квадратных углов */
 .tester-img {
     width: 150px;
     height: 150px;
@@ -58,13 +57,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap; /* Разрешаем тексту переноситься на новую строку на узких экранах, чтобы ничего не обрезалось */
+    flex-wrap: wrap;
     gap: 6px;
     text-align: center;
     padding: 0 10px;
 }
 
-/* Увеличенный текст под кнопкой */
 .tester-text {
     font-size: 16px;
     font-weight: 500;
@@ -85,7 +83,6 @@ body {
     color: #cbd5e1;
 }
 
-/* Плашка авторства */
 .footer-credit {
     position: absolute;
     bottom: 20px;
@@ -101,7 +98,6 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* На совсем узких телефонах плашка аккуратно смещается по центру, чтобы не вылезать за экран */
 @media (max-width: 400px) {
     .footer-credit {
         position: relative;
